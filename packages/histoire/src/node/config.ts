@@ -38,6 +38,7 @@ export function getDefaultConfig(): HistoireConfig {
       '**/dist/**',
     ],
     supportMatch: [],
+    autoOpenFirstVariant: true,
     tree: {
       file: 'title',
       order: 'asc',

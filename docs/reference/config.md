@@ -317,6 +317,18 @@ export default defineConfig({
 })
 ```
 
+## `autoOpenFirstVariant`
+
+`boolean` - Default: `true`
+
+Automatically select and render the first variant of a story when it is opened for the first time and has more than one variant, instead of leaving the preview pane empty until a variant is clicked. Only affects the `single` layout (the default) — the `grid` layout already renders all variants.
+
+```ts
+export default defineConfig({
+  autoOpenFirstVariant: false,
+})
+```
+
 ## `markdown`
 
 `(md: MarkdownIt) => MarkdownIt | Promise<MarkdownIt>`
