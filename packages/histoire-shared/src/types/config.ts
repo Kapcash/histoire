@@ -177,6 +177,15 @@ export interface HistoireConfig {
    */
   autoApplyContrastColor?: boolean
   /**
+   * Automatically select and render the first variant of a story when it is opened
+   * for the first time and has more than one variant, instead of leaving the preview
+   * pane empty until a variant is clicked. Only affects the `single` layout.
+   *
+   * Set to `false` to require an explicit variant selection instead.
+   * @default true
+   */
+  autoOpenFirstVariant?: boolean
+  /**
    * Class added to the html root of the story preview when dark mode is enabled.
    * @deprecated use `theme.darkClass` instead
    */

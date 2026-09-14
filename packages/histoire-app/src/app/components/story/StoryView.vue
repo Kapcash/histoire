@@ -4,6 +4,7 @@ import { ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useStoryStore } from '../../stores/story'
 
+import { histoireConfig } from '../../util/config'
 import { isMobile } from '../../util/responsive'
 import BaseEmpty from '../base/BaseEmpty.vue'
 import BaseSplitPane from '../base/BaseSplitPane.vue'
@@ -34,6 +35,14 @@ watch(() => [storyStore.currentStory, storyStore.currentVariant], () => {
     }
 
     if (storyStore.currentStory?.variants.length === 1) {
+      setVariant(storyStore.currentStory.variants[0].id)
+      return
+    }
+
+    if (
+      histoireConfig.autoOpenFirstVariant !== false
+      && storyStore.currentStory?.variants.length > 1
+    ) {
       setVariant(storyStore.currentStory.variants[0].id)
     }
   }
